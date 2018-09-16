@@ -196,6 +196,39 @@ img:hover {
   padding-bottom: 10px;
 }
 
+/* team section */
+#team {
+  padding-top: 60px;
+  padding-bottom: 100px;
+}
+#testimonials h2 {
+  border-left: 2px solid #f2af00;
+  display: inline-block;
+  padding: 10px 10px 10px 20px;
+}
+#testimonials h4 {
+	padding-bottom: 40px;
+}
+#testimonials .col-md-12 {
+  text-align: center;
+  padding-bottom: 60px;
+}
+#testimonials img {
+  border: 1px solid #666;
+  padding: 15px;
+}
+
+/* portfolio section */
+#portfolio {
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  }
+#portfolio h2 {
+  border-right: 2px solid #f2af00;
+  display: inline-block;
+  padding: 10px 20px 10px 10px;
+}
 /* FILTER CSS */
 .filter-wrapper {
     width: 100%;
@@ -444,6 +477,9 @@ footer span {
 	color: #fff;
   }
 
+.carousel-indicators .active{ background: #31708f; } .content{ margin-top:20px; } .adjust1{ float:left; width:100%; margin-bottom:0; } .adjust2{ margin:0; } .carousel-indicators li{ border :1px solid #ccc; } .carousel-control{ color:#31708f; width:5%; } .carousel-control:hover, .carousel-control:focus{ color:#31708f; } .carousel-control.left, .carousel-control.right { background-image: none; } .media-object{ margin:auto; margin-top:15%; } @media screen and (max-width: 768px) { .media-object{ margin-top:0; } }
+
+
 /* media 960 */
 @media only screen and ( max-width: 980px ) {
   .navbar-default .navbar-nav li a {
@@ -459,3 +495,4 @@ footer span {
     padding-bottom: 30px;
   }
 }
+
