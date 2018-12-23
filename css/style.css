@@ -17,3 +17,25 @@
 .black-menu-stripe {
     background: black;
 }
+#header-wrapper {
+    background: rgba(0,0,0,0.7);
+    border-radius: 15px;
+}
+#header-text {
+    margin-top: 3.5em;
+}
+#header-wrapper .inverted.orange.button {
+    margin-bottom: 10px;
+}
+.italic-conversational {
+    font-size: 1.4em;
+}
+b.red {
+    color: #DB2828 !important
+}
+b.orange {
+    color: #F2711C !important
+}
+.canvasjs-chart-credit {
+    display: none;
+}
