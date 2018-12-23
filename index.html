@@ -1,388 +1,295 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+	<!-- Standard Meta -->
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="">
-  <meta name="description" content="">
-  
-  <title>Page Title</title>
+	<!-- Site Properties -->
+	<title>Homepage - Semantic</title>
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/reset.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/site.css">
 
-	<!-- stylesheet css -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/nivo-lightbox.css">
-	<link rel="stylesheet" href="css/nivo_themes/default/default.css">
-	<link rel="stylesheet" href="css/style.css">
-	<!-- google web font css -->
-	<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600,700' rel='stylesheet' type='text/css'>
-<!-- javascript js -->	
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="js/custom.js"></script>
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/container.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/grid.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/header.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/image.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/menu.css">
+
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/divider.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/dropdown.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/segment.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/button.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/list.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/icon.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/sidebar.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/transition.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<style type="text/css">
+
+		.hidden.menu {
+			display: none;
+		}
+
+		.masthead.segment {
+			min-height: 700px;
+			padding: 1em 0em;
+		}
+		.masthead .logo.item img {
+			margin-right: 1em;
+		}
+		.masthead .ui.menu .ui.button {
+			margin-left: 0.5em;
+		}
+		.masthead h1.ui.header {
+			margin-top: 3em;
+			margin-bottom: 0em;
+			font-size: 4em;
+			font-weight: normal;
+		}
+		.masthead h2 {
+			font-size: 1.7em;
+			font-weight: normal;
+		}
+
+		.ui.vertical.stripe {
+			padding: 8em 0em;
+		}
+		.ui.vertical.stripe h3 {
+			font-size: 2em;
+		}
+		.ui.vertical.stripe .button + h3,
+		.ui.vertical.stripe p + h3 {
+			margin-top: 3em;
+		}
+		.ui.vertical.stripe .floated.image {
+			clear: both;
+		}
+		.ui.vertical.stripe p {
+			font-size: 1.33em;
+		}
+		.ui.vertical.stripe .horizontal.divider {
+			margin: 3em 0em;
+		}
+
+		.quote.stripe.segment {
+			padding: 0em;
+		}
+		.quote.stripe.segment .grid .column {
+			padding-top: 5em;
+			padding-bottom: 5em;
+		}
+
+		.footer.segment {
+			padding: 5em 0em;
+		}
+
+		.secondary.pointing.menu .toc.item {
+			display: none;
+		}
+
+		@media only screen and (max-width: 700px) {
+			.ui.fixed.menu {
+				display: none !important;
+			}
+			.secondary.pointing.menu .item,
+			.secondary.pointing.menu .menu {
+				display: none;
+			}
+			.secondary.pointing.menu .toc.item {
+				display: block;
+			}
+			.masthead.segment {
+				min-height: 350px;
+			}
+			.masthead h1.ui.header {
+				font-size: 2em;
+				margin-top: 1.5em;
+			}
+			.masthead h2 {
+				margin-top: 0.5em;
+				font-size: 1.5em;
+			}
+		}
+
+
+	</style>
+
+	<script src="library/jquery.min.js"></script>
+	<script src="semantic/dist/components/visibility.js"></script>
+	<script src="semantic/dist/components/sidebar.js"></script>
+	<script src="semantic/dist/components/transition.js"></script>
+	<script>
+        $(document)
+            .ready(function() {
+
+                // fix menu when passed
+                $('.masthead')
+                    .visibility({
+                        once: false,
+                        onBottomPassed: function() {
+                            $('.fixed.menu').transition('fade in');
+                        },
+                        onBottomPassedReverse: function() {
+                            $('.fixed.menu').transition('fade out');
+                        }
+                    })
+                ;
+
+                // create sidebar and attach to menu open
+                $('.ui.sidebar')
+                    .sidebar('attach events', '.toc.item')
+                ;
+
+            })
+        ;
+	</script>
 </head>
-<body data-spy="scroll" data-target=".navbar-collapse">
-	
-<!-- navigation -->
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
-		<div class="navbar-header">
-			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="icon icon-bar"></span>
-				<span class="icon icon-bar"></span>
-				<span class="icon icon-bar"></span>
-			</button>
-			<a href="#home" class="navbar-brand smoothScroll">BlaBla</a>
-		</div>
-		<div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#home" class="smoothScroll">HOME</a></li>
-				<li><a href="#service" class="smoothScroll">COURSES</a></li>
-				<li><a href="#about" class="smoothScroll">ABOUT</a></li>
-				<li><a href="#portfolio" class="smoothScroll">PICTURES</a></li>
-				<li><a href="#pricing" class="smoothScroll">PRICE</a></li>
-				<li><a href="#contact" class="smoothScroll">CONTACT</a></li>
-			</ul>
-		</div>
-	</div>
-</div>		
+<body>
 
-<!-- home section -->
-<div id="home">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-offset-6 col-md-6 col-sm-offset-6 col-sm-6">
-				<h2>Welcome to</h2>
-				<h1><strong>Blablabla</strong> School</h1>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
-				<a href="#service" class="btn btn-default smoothScroll">GET STARTED</a>
-				
+<!-- Following Menu -->
+<div class="ui large top fixed hidden menu">
+	<div class="ui container">
+		<a class="active item">Home</a>
+		<a class="item">Work</a>
+		<a class="item">Angol vállalati tanfolyamok</a>
+		<a class="item">Careers</a>
+		<div class="right menu">
+			<div class="item">
+				<a class="ui button">Log in</a>
+			</div>
+			<div class="item">
+				<a class="ui primary button">Sign Up</a>
 			</div>
 		</div>
 	</div>
 </div>
 
-<!-- divider section -->
-<div class="container">
-	<div class="row">
-		<div class="col-md-1 col-sm-1"></div>
-		<div class="col-md-10 col-sm-10">
-			<hr>
-		</div>
-		<div class="col-md-1 col-sm-1"></div>
-	</div>
+<!-- Sidebar Menu -->
+<div class="ui vertical inverted sidebar menu">
+	<a class="active item">Home</a>
+	<a class="item">Work</a>
+	<a class="item">Angol vállalati tanfolyamok</a>
+	<a class="item">Careers</a>
+	<a class="item">Login</a>
+	<a class="item">Signup</a>
 </div>
 
-<!-- service section -->
-<div id="service">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<h2>Our Courses</h2>
-			</div>
-			<div class="col-md-4 col-sm-4">
-				<i class="fa fa-comment"></i>
-				<h3>Kommunikacios tanfolyamok</h3>
-				<p>Lorem adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
-			</div>
-			<div class="col-md-4 col-sm-4">
-				<i class="fa fa-street-view"></i>
-				<h3>One-to-one tanfolyamok</h3>
-				<p>Lorolor sit amet, it, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
-			</div>
-			<div class="col-md-4 col-sm-4">
-				<i class="fa fa-group"></i>
-				<h3>Kiscsoportos tanfolyamok</h3>
-				<p>Lorem ipsum ed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
+
+<!-- Page Contents -->
+<div class="pusher">
+	<div class="ui inverted vertical masthead center aligned segment">
+
+		<div class="ui container">
+			<div class="ui large secondary inverted pointing menu">
+				<a class="toc item">
+					<i class="sidebar icon"></i>
+				</a>
+				<a class="active item">Home</a>
+				<a class="item">Work</a>
+				<a class="item">Angol vállalati tanfolyamok</a>
+				<a class="item">Careers</a>
 			</div>
 		</div>
 	</div>
-</div>
-
-<!-- divider section -->
-<div class="container">
-	<div class="row">
-		<div class="col-md-1 col-sm-1"></div>
-		<div class="col-md-10 col-sm-10">
-			<hr>
-		</div>
-		<div class="col-md-1 col-sm-1"></div>
+	<div class="ui text container">
+		<h1 class="ui inverted header">
+			Imagine-a-Company
+		</h1>
+		<h2>Do whatever you want when you want to.</h2>
+		<div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>
 	</div>
-</div>
 
-<div id="testimonials">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<h2>Our Testimonials</h2>
+	<div class="ui vertical stripe segment">
+		<div class="ui middle aligned stackable grid container">
+			<div class="row">
+				<div class="eight wide column">
+					<h3 class="ui header">Hatékony, kiscsoportos angol és spanyol tréningek az Ön cégénél.</h3>
+					<p><i>Üdvözlöm a honlapomon!
+						Kedves Érdeklődő! Szeretné, ha munkatársai megállnák a helyüket angol nyelven történő tárgyalásokon? Fontos, hogy pontosan és gördülékenyen kommunikáljanak és prezentáljanak? Szükségük van az angolra mindennapi tevékenységük során, hiszen nyelvigényes környezetben dolgoznak?  Amennyiben a válasza valamelyik kérdésre igen, kérem, olvasson tovább.
+						<br/>Üdvözlettel,
+						<br/>Veres András</i></p>
+					<h3 class="ui header">We Make Bananas That Can Dance</h3>
+					<p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
+				</div>
+				<div class="six wide right floated column">
+					<img src="images/andras_veres.jpg" class="ui large bordered rounded image">
+				</div>
 			</div>
-			<div class="col-md-12 col-sm-12">
-				
-				<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-				<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-				<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-				<!------ Include the above in your HEAD tag ---------->
-
-				<div class="container content"> <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> <!-- Indicators --> <ol class="carousel-indicators"> <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li> <li data-target="#carousel-example-generic" data-slide-to="1"></li> <li data-target="#carousel-example-generic" data-slide-to="2"></li> </ol> <!-- Wrapper for slides --> <div class="carousel-inner"> <div class="item active"> <div class="row"> <div class="col-xs-12"> <div class="thumbnail adjust1"> <div class="col-md-2 col-sm-2 col-xs-12"> <img class="media-object img-rounded img-responsive" src="http://placehold.it/100"> </div> <div class="col-md-10 col-sm-10 col-xs-12"> <div class="caption"> <p class="text-info lead adjust2">I can't wait to test this out.</p> <p><span class="glyphicon glyphicon-thumbs-up"></span> This is a testimonial window. Feedback of user can be displayed here.</p> <blockquote class="adjust2"> <p>Abhijit Goswami</p> <small><cite title="Source Title"><i class="glyphicon glyphicon-globe"></i> www.example1.com</cite></small> </blockquote> </div> </div> </div> </div> </div> </div> <div class="item"> <div class="row"> <div class="col-xs-12"> <div class="thumbnail adjust1"> <div class="col-md-2 col-sm-2 col-xs-12"> <img class="media-object img-rounded img-responsive" src="http://placehold.it/100"> </div> <div class="col-md-10 col-sm-10 col-xs-12"> <div class="caption"> <p class="text-info lead adjust2">I can't wait to test this out.</p> <p><span class="glyphicon glyphicon-thumbs-up"></span> This is a testimonial window. Feedback of user can be displayed here.</p> <blockquote class="adjust2"> <p>Abhijit Goswami</p> <small><cite title="Source Title"><i class="glyphicon glyphicon-globe"></i> www.example2.com</cite></small> </blockquote> </div> </div> </div> </div> </div> </div> <div class="item"> <div class="row"> <div class="col-xs-12"> <div class="thumbnail adjust1"> <div class="col-md-2 col-sm-2 col-xs-12"> <img class="media-object img-rounded img-responsive" src="http://placehold.it/100"> </div> <div class="col-md-10 col-sm-10 col-xs-12"> <div class="caption"> <p class="text-info lead adjust2">I can't wait to test this out.</p> <p><span class="glyphicon glyphicon-thumbs-up"></span> This is a testimonial window. Feedback of user can be displayed here.</p> <blockquote class="adjust2"> <p>Abhijit Goswami</p> <small><cite title="Source Title"><i class="glyphicon glyphicon-globe"></i> www.example3.com</cite></small> </blockquote> </div> </div> </div> </div> </div> </div> </div> <!-- Controls --> <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a> <a class="right carousel-control" href="#carousel-example-generic" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a> </div> </div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<!-- divider section -->
-<div class="container">
-	<div class="row">
-		<div class="col-md-1 col-sm-1"></div>
-		<div class="col-md-10 col-sm-10">
-			<hr>
-		</div>
-		<div class="col-md-1 col-sm-1"></div>
-	</div>
-</div>
-
-<!-- about section -->
-<div id="about">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<h2>About Us</h2>
-			</div>
-			<div class="col-md-6 col-sm-6">
-				<img src="images/about-img.jpg" class="img-responsive" alt="about img">
-			</div>
-			<div class="col-md-6 col-sm-6">
-				<h4>Amazing Programs &amp; Teachers</h4>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
-				<p>Dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
-			</div>
-		</div>
-	</div>
-</div>
-
-<!-- divider section -->
-<div class="container">
-	<div class="row">
-		<div class="col-md-1 col-sm-1"></div>
-		<div class="col-md-10 col-sm-10">
-			<hr>
-		</div>
-		<div class="col-md-1 col-sm-1"></div>
-	</div>
-</div>
-
-<!-- portfolio section -->
-<div id="portfolio">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<h2>Our Portfolio</h2>
-			</div>
-			<div class="col-md-12 col-sm-12">
-				<!-- ISO section -->
-				<div class="iso-section">
-               		<div class="iso-box-section">
-               			<div class="iso-box-wrapper col4-iso-box">
-
-               				<div class="iso-box html photoshop wordpress mobile col-md-4 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img1.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img1.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box html wordpress mobile col-md-4 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img2.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img2.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box wordpress col-md-4 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img3.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img3.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box html mobile col-md-6 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img4.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img4.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box wordpress col-md-6 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img5.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img5.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box html photoshop col-md-4 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img6.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img6.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box photoshop col-md-4 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img7.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img7.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box wordpress col-md-4 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img8.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img8.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               			</div>
-               		</div>
-
+			<div class="row">
+				<div class="center aligned column">
+					<a class="ui huge button">Check Them Out</a>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>		
 
-<!-- divider section -->
-<div class="container">
-	<div class="row">
-		<div class="col-md-1 col-sm-1"></div>
-		<div class="col-md-10 col-sm-10">
-			<hr>
+
+	<div class="ui vertical stripe quote segment">
+		<div class="ui equal width stackable internally celled grid">
+			<div class="center aligned row">
+				<div class="column">
+					<h3>"What a Company"</h3>
+					<p>That is what they all say about us</p>
+				</div>
+				<div class="column">
+					<h3>"I shouldn't have gone with their competitor."</h3>
+					<p>
+						<img src="images/avatar/nan.jpg" class="ui avatar image"> <b>Nan</b> Chief Fun Officer Acme Toys
+					</p>
+				</div>
+			</div>
 		</div>
-		<div class="col-md-1 col-sm-1"></div>
 	</div>
-</div>
 
-<!-- pricing section -->
-<div id="pricing">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<h2>Our Pricing</h2>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-10">
-				<div class="plan">
-					<div class="plan-title">
-						<h3>Starter</h3>
-						<small>$100 per month</small>
+	<div class="ui vertical stripe segment">
+		<div class="ui text container">
+			<h3 class="ui header">Breaking The Grid, Grabs Your Attention</h3>
+			<p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.</p>
+			<a class="ui large button">Read More</a>
+			<h4 class="ui horizontal header divider">
+				<a href="#">Case Studies</a>
+			</h4>
+			<h3 class="ui header">Did We Tell You About Our Bananas?</h3>
+			<p>Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance.</p>
+			<a class="ui large button">I'm Still Quite Interested</a>
+		</div>
+	</div>
+
+
+	<div class="ui inverted vertical footer segment">
+		<div class="ui container">
+			<div class="ui stackable inverted divided equal height stackable grid">
+				<div class="three wide column">
+					<h4 class="ui inverted header">About</h4>
+					<div class="ui inverted link list">
+						<a href="#" class="item">Sitemap</a>
+						<a href="#" class="item">Contact Us</a>
+						<a href="#" class="item">Religious Ceremonies</a>
+						<a href="#" class="item">Gazebo Plans</a>
 					</div>
-					<ul>
-						<li>100 GB STORAGE</li>
-						<li>10 TB BANDWIDTH</li>
-						<li>10 BASIC THEMES</li>
-						<li>24-HOUR RESPONSE</li>
-					</ul>
-					<button class="btn btn-warning">Sign Up</button>
 				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-10">
-				<div class="plan">
-					<div class="plan-title">
-						<h3>Business</h3>
-						<small>$350 per month</small>
+				<div class="three wide column">
+					<h4 class="ui inverted header">Services</h4>
+					<div class="ui inverted link list">
+						<a href="#" class="item">Banana Pre-Order</a>
+						<a href="#" class="item">DNA FAQ</a>
+						<a href="#" class="item">How To Access</a>
+						<a href="#" class="item">Favorite X-Men</a>
 					</div>
-					<ul>
-						<li>1,000 GB STORAGE</li>
-						<li>50 TB BANDWIDTH</li>
-						<li>50 PRO THEMES</li>
-						<li>1-HOUR RESPONSE</li>
-					</ul>
-					<button class="btn btn-warning">Sign Up</button>
 				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-10">
-				<div class="plan">
-					<div class="plan-title">
-						<h3>Advanced</h3>
-						<small>$500 per month</small>
-					</div>
-					<ul>
-						<li>2,000 GB STORAGE</li>
-						<li>100 TB BANDWIDTH</li>
-						<li>100 PREMIUM THEMES</li>
-						<li>30-MIN RESPONSE</li>
-					</ul>
-					<button class="btn btn-warning">Sign Up</button>
+				<div class="seven wide column">
+					<h4 class="ui inverted header">Footer Header</h4>
+					<p>Extra space for a call to action inside the footer that could help re-engage users.</p>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
-<!-- divider section -->
-<div class="container">
-	<div class="row">
-		<div class="col-md-1 col-sm-1"></div>
-		<div class="col-md-10 col-sm-10">
-			<hr>
-		</div>
-		<div class="col-md-1 col-sm-1"></div>
-	</div>
-</div>
-
-<!-- contact section -->
-<div id="contact">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<h2>Keep in touch</h2>
-			</div>
-			<form action="#" method="post" role="form">
-				<div class="col-md-1 col-sm-1"></div>
-				<div class="col-md-10 col-sm-10">
-					<div class="col-md-6 col-sm-6">
-						<input name="name" type="text" class="form-control" id="name" placeholder="Name">
-				  	</div>
-					<div class="col-md-6 col-sm-6">
-						<input name="email" type="email" class="form-control" id="email" placeholder="Email">
-				  	</div>
-                    <div class="col-md-12 col-sm-12">
-						<input name="subject" type="text" class="form-control" id="subject" placeholder="Subject">
-	    	  	  	</div>
-					<div class="col-md-12 col-sm-12">
-						<textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea>
-					</div>
-					<div class="col-md-8 col-sm-8">
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy</p>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<input name="submit" type="submit" class="form-control" id="submit" value="SEND MESSAGE">
-					</div>
-				</div>
-				<div class="col-md-1 col-sm-1"></div>
-			</form>
-		</div>
-	</div>
-</div>
-
-<!-- divider section -->
-<div class="container">
-	<div class="row">
-		<div class="col-md-1 col-sm-1"></div>
-		<div class="col-md-10 col-sm-10">
-			<hr>
-		</div>
-		<div class="col-md-1 col-sm-1"></div>
-	</div>
-</div>
-
-<!-- footer section -->
-<footer>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-sm-6">
-				<h2>Our Office</h2>
-				<p>108 Huszar Street, Budapest, HU 1074</p>
-				<p>Email: <span>blablabla.com</span></p>
-				<p>Phone: <span>111-111-0340</span></p>
-			</div>
-			<div class="col-md-6 col-sm-6">
-				<h2>Social Us</h2>
-				<ul class="social-icons">
-					<li><a href="#" class="fa fa-facebook"></a></li>
-					<li><a href="#" class="fa fa-twitter"></a></li>
-                    <li><a href="#" class="fa fa-google-plus"></a></li>
-					<li><a href="#" class="fa fa-dribbble"></a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</footer>
-
-<!-- divider section -->
-<div class="container">
-	<div class="row">
-		<div class="col-md-1 col-sm-1"></div>
-		<div class="col-md-10 col-sm-10">
-			<hr>
-		</div>
-		<div class="col-md-1 col-sm-1"></div>
-	</div>
-</div>
 </body>
+
 </html>
