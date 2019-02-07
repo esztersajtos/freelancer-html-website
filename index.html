@@ -27,111 +27,6 @@
     <link rel="stylesheet" type="text/css" href="semantic/dist/components/transition.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <style type="text/css">
-
-        .hidden.menu {
-            display: none;
-        }
-
-        .masthead.segment {
-            min-height: 700px;
-            padding: 1em 0;
-        }
-
-        .masthead .logo.item img {
-            margin-right: 1em;
-        }
-
-        .masthead .ui.menu .ui {
-            margin-left: 0.5em;
-        }
-
-        .masthead h1.ui.header {
-            margin-top: 3em;
-            margin-bottom: 0;
-            font-size: 4em;
-            font-weight: normal;
-        }
-
-        .masthead h2 {
-            font-size: 1.7em;
-            font-weight: normal;
-        }
-
-        .ui.vertical.stripe {
-            padding: 8em 0;
-        }
-
-        .ui.vertical.stripe h3 {
-            font-size: 2em;
-        }
-
-        .ui.vertical.stripe .button + h3,
-        .ui.vertical.stripe p + h3 {
-            margin-top: 3em;
-        }
-
-        .ui.vertical.stripe {
-            clear: both;
-        }
-
-        .ui.vertical.stripe p {
-            font-size: 1.33em;
-        }
-
-        .ui.vertical.stripe .horizontal.divider {
-            margin: 3em 0;
-        }
-
-        .quote.stripe.segment {
-            padding: 0;
-        }
-
-        .quote.stripe.segment .grid .column {
-            padding-top: 5em;
-            padding-bottom: 5em;
-        }
-
-        .footer.segment {
-            padding: 5em 0;
-        }
-
-        .secondary.pointing.menu .toc.item {
-            display: none;
-        }
-
-        @media only screen and (max-width: 700px) {
-            .ui.fixed.menu {
-                display: none !important;
-            }
-
-            .secondary.pointing.menu .item,
-            .secondary.pointing.menu .menu {
-                display: none;
-            }
-
-            .secondary.pointing.menu .toc.item {
-                display: block;
-            }
-
-            .masthead.segment {
-                min-height: 350px;
-            }
-
-            .masthead h1.ui.header {
-                font-size: 2em;
-                margin-top: 1.5em;
-            }
-
-            .masthead h2 {
-                margin-top: 0.5em;
-                font-size: 1.5em;
-            }
-        }
-
-
-    </style>
-
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="semantic/dist/components/visibility.js"></script>
@@ -147,7 +42,7 @@
                 animationEnabled: true,
                 backgroundColor: "rgb(27, 28, 29)",
                 theme: 'dark2',
-                colorSet: ['#DB2828','##F2711C','white'],
+                colorSet: ['#1FCD6D','#223142','#1E8DED'],
                 data: [{
                     type: "pie",
                     startAngle: 40,
@@ -158,17 +53,17 @@
                     indexLabel: "{y}% {label}",
                     dataPoints: [{
                         y: 75,
-                        color: '#F2711C',
+                        color: '#1FCD6D',
                         label: "Barátságos és ösztönző hangulatú kommunikáció",
                         toolTip: "Barátságos és ösztönző hangulatú kommunikáció: tárgyalás, beszélgetés, <br>vita, idiómák, problémamegoldás, szórakoztató és változatos feladatok megoldása, <br>azért, hogy folyékonyan beszéljenek a résztvevők angolul."
                         }, {
                         y: 15,
-                        color: '#DB2828',
+                        color: '#223142',
                         label: "Nyelvtani gyakorlás",
                         toolTip: "Nyelvtani gyakorlás, hogy a tanulók nyelvhelyessége megfelelő legyen."
                         }, {
                         y: 10,
-                        color: 'purple',
+                        color: '#1E8DED',
                         label: "Előző órák szókincsének ismétlése",
                         toolTip: "Az előző órák szókincsének ismétlése, hogy a <br>munkatársak választékosan tudják kifejezni magukat, és <br>megragadjon a tudásuk."
                     }]
@@ -198,9 +93,9 @@
 <body>
 
 <!-- Following Menu -->
-<div class="ui large top fixed hidden menu">
+<div class="ui large top inverted menu dark-blue">
     <div class="ui container">
-        <a class="active item">Home</a>
+        <a class="active item">Angol Spanyol Nyelvoktatás</a>
         <a class="item">Céges tanfolyamok</a>
         <a class="item">Magánórák</a>
         <a class="item">Rólam</a>
@@ -208,45 +103,23 @@
     </div>
 </div>
 
-<!-- Sidebar Menu -->
-<div class="ui vertical inverted sidebar menu">
-    <a class="active item">Home</a>
-    <a class="item">Céges tanfolyamok</a>
-    <a class="item">Magánórák</a>
-    <a class="item">Rólam</a>
-    <a class="item">Kapcsolat</a>
-</div>
-
 
 <!-- Page Contents -->
 <div class="pusher">
-    <div class="ui inverted vertical masthead center aligned segment">
-
-        <div class="ui container">
-            <div class="ui large secondary inverted pointing menu">
-                <a class="toc item">
-                    <i class="sidebar icon"></i>
-                </a>
-                <a class="active item">Home</a>
-                <a class="item">Céges tanfolyamok</a>
-                <a class="item">Magánórák</a>
-                <a class="item">Rólam</a>
-                <a class="item">Kapcsolat</a>
-            </div>
-        </div>
-        <div class="ui text container" id="header-wrapper">
-            <h1 class="ui inverted header" id="header-text">
+    <div class="ui inverted vertical masthead center aligned segment" id="header-slide">
+        <div class="dark-blue" id="header-wrapper">
+            <h1>
                 Spanyol és angol nyelvórák
             </h1>
             <h2>Egyéni és kiscsoportos vállalati tanfolyamok,<br/> magánórák.</h2>
-            <a class="ui huge inverted orange button" href="#welcome-section">Részletek<i class="right arrow icon"></i></a>
+            <a class="ui huge inverted neon-green button" href="#welcome-section">Részletek<i class="right arrow icon"></i></a>
         </div>
     </div>
     <div class="ui vertical stripe segment" id="welcome-section">
         <div class="ui middle aligned stackable grid container">
             <div class="row">
                 <div class="eight wide column italic-conversational">
-                    <h3 class="ui header">Hatékony, kiscsoportos angol és spanyol tréningek az Ön cégénél.</h3>
+                    <h3 class="ui dark-blue header">Hatékony, kiscsoportos angol és spanyol tréningek az Ön cégénél.</h3>
                     <p><i>Üdvözlöm a honlapomon! Kedves Érdeklődő!</i></p>
                     <p><i>
                         Szeretné, ha munkatársai megállnák a helyüket angol nyelven történő tárgyalásokon? Fontos, hogy
@@ -263,7 +136,7 @@
         </div>
     </div>
     <div class="ui vertical stripe inverted segment">
-        <h2 class="ui yellow header center aligned huge">
+        <h2 class="ui white header center aligned huge">
             Vállalati tanfolyamok, tréningek angol és spanyol nyelven
         </h2>
         <h4 class="ui horizontal divider neon header">
@@ -273,13 +146,13 @@
         <div class="ui equal width stackable internally celled grid">
             <div class="center aligned row">
                 <div class="column">
-                    <h3 class="ui red header">Kommunikációs tanfolyamok (Kiscsoportos 2-6 fő)</h3>
-                    <h3 class="ui orange header">Egyéni, one-on-one tanfolyamok</h3>
-                    <p><b class="red">Kiknek ajánlom?</b><br/>Középfok körüli szinttől (B1+) - felsőfokig (C1)</p>
-                    <p><b class="red">Milyen hosszú egy tanóra?</b><br/>Egy alkalom 90 percből áll, ami két 45 perces
+                    <h3 class="ui light-blue header">Kommunikációs tanfolyamok (Kiscsoportos 2-6 fő)</h3>
+                    <h3 class="ui neon-green header">Egyéni, one-on-one tanfolyamok</h3>
+                    <p><b class="light-blue">Kiknek ajánlom?</b><br/>Középfok körüli szinttől (B1+) - felsőfokig (C1)</p>
+                    <p><b class="light-blue">Milyen hosszú egy tanóra?</b><br/>Egy alkalom 90 percből áll, ami két 45 perces
                         órának felel
                         meg.</p>
-                    <p><b class="red">Mire kerül sor a tanfolyamon?</b><br>A tananyagot minden esetben az egyéni igények
+                    <p><b class="light-blue">Mire kerül sor a tanfolyamon?</b><br>A tananyagot minden esetben az egyéni igények
                         figyelembe
                         vételével állítom össze.</p>
                 </div>
@@ -290,20 +163,30 @@
         </div>
     </div>
 
-    <div class="ui vertical stripe segment">
-        <div class="ui text container">
-            <h3 class="ui header">Breaking The Grid, Grabs Your Attention</h3>
-            <p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing
-                nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic
-                and worth your attention.</p>
-            <a class="ui large button">Read More</a>
-            <h4 class="ui horizontal header divider">
-                <a href="#">Case Studies</a>
-            </h4>
-            <h3 class="ui header">Did We Tell You About Our Bananas?</h3>
-            <p>Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but its really
-                true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance.</p>
-            <a class="ui large button">I'm Still Quite Interested</a>
+    <div class="ui vertical stripe segment dark-blue">
+        <div class="ui middle aligned stackable grid container">
+            <div class=" row">
+                <div class="seven wide column">
+                    <h4 class="ui white mini-header header">Tapasztalataim szerint a következő tevékenységekre van igény a tanfolyam keretein belül</h4>
+                    <div class="ui bulleted list white">
+                        <div class="item">angolul zajló kommunikáció fejlesztésére, legyen szó üzleti vagy általános angol nyelvről.</div>
+                        <div class="item">on-the-job segítség nyújtására, amely magában foglalja tárgyalások és meetingek szimulációját, beszámolók és e-mailek megfogalmazását és prezentációk összeállítását.</div>
+                        <div class="item">nyelvtani rendszerezésre és gyakorlásra.</div>
+                        <div class="item">írott és hallott szöveg értésének fejlesztésére.</div>
+                        <div class="item">kiejtés és intonáció specifikus fejlesztésére.</div>
+                    </div>
+                </div>
+                <div class="seven wide right floated column">
+                    <h4 class="ui white mini-header header">Milyen eredményre számíthat? Nyelvtudása hatékony fejlesztésére jó hangulatú órákon</h4>
+                    <div class="ui bulleted list white">
+                        <div class="item">jelentősen nő az írott és hallott szövegek értésének képessége</div>
+                        <div class="item">javul kiejtése és intonációja; unglishHunhh d Hunglish helyett English-t beszél majd</div>
+                        <div class="item">uralja a legfontosabb nyelvtani szerkezeteket</div>
+                        <div class="item">elsajátít számos formális és informális stíluselemet</div>
+                        <div class="item">mindezek eredményeképpen magabiztosabban kommunikál szóban és írásban</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

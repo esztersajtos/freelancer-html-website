@@ -564,6 +564,33 @@ a.ui.inverted.grey.header:hover {
   color: #cfd0d2 !important;
 }
 
+/*--- Light Blue ---*/
+
+.ui.light-blue.header {
+  color: #1E8DED !important;
+}
+.ui.light-blue.dividing.header {
+  border-bottom: 2px solid #1E8DED;
+}
+
+/*--- Neon Green ---*/
+
+.ui.neon-green.header {
+  color: #1FCD6D !important
+}
+.ui.neon-green.dividing.header {
+  border-bottom: 2px solid #1FCD6D;
+}
+
+/*--- Dark Blue ---*/
+
+.ui.dark-blue.header {
+  color: #223142 !important;
+}
+.ui.dark-blue.dividing.header {
+  border-bottom: 2px solid #223142;
+}
+
 /*-------------------
        Aligned
 --------------------*/
