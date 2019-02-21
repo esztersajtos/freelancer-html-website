@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Site Properties -->
+    <title>Homepage - Semantic</title>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/reset.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/site.css">
+
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/container.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/grid.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/header.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/image.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/menu.css">
+
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/divider.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/segment.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/button.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/list.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/icon.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/transition.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="semantic/dist/components/visibility.js"></script>
+    <script src="semantic/dist/components/sidebar.js"></script>
+    <script src="semantic/dist/components/transition.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let options = {
+                title: {
+                    text: "Mire kerül sor a tanfolyamon?"
+                },
+                animationEnabled: true,
+                backgroundColor: "rgb(27, 28, 29)",
+                theme: 'dark2',
+                colorSet: ['#1FCD6D','#223142','#1E8DED'],
+                data: [{
+                    type: "pie",
+                    startAngle: 40,
+                    toolTipContent: "{toolTip}",
+                    showInLegend: "true",
+                    legendText: "{label}",
+                    indexLabelFontSize: 16,
+                    indexLabel: "{y}% {label}",
+                    dataPoints: [{
+                        y: 75,
+                        color: '#1FCD6D',
+                        label: "Barátságos és ösztönző hangulatú kommunikáció",
+                        toolTip: "Barátságos és ösztönző hangulatú kommunikáció: tárgyalás, beszélgetés, <br>vita, idiómák, problémamegoldás, szórakoztató és változatos feladatok megoldása, <br>azért, hogy folyékonyan beszéljenek a résztvevők angolul."
+                        }, {
+                        y: 15,
+                        color: '#223142',
+                        label: "Nyelvtani gyakorlás",
+                        toolTip: "Nyelvtani gyakorlás, hogy a tanulók nyelvhelyessége megfelelő legyen."
+                        }, {
+                        y: 10,
+                        color: '#1E8DED',
+                        label: "Előző órák szókincsének ismétlése",
+                        toolTip: "Az előző órák szókincsének ismétlése, hogy a <br>munkatársak választékosan tudják kifejezni magukat, és <br>megragadjon a tudásuk."
+                    }]
+                }]
+            };
+            // fix menu when passed
+            $('.masthead')
+                .visibility({
+                    once: false,
+                    onBottomPassed: function () {
+                        $('.fixed.menu').transition('fade in');
+                    },
+                    onBottomPassedReverse: function () {
+                        $('.fixed.menu').transition('fade out');
+                    }
+                })
+            ;
+
+            // create sidebar and attach to menu open
+            $('.ui.sidebar')
+                .sidebar('attach events', '.toc.item')
+            ;
+            $("#chartContainer").CanvasJSChart(options);
+        });
+    </script>
+</head>
+<body>
+
+<!-- Following Menu -->
+<div class="ui large top inverted menu dark-blue">
+    <div class="ui container">
+        <a class="active item">Angol Spanyol Nyelvoktatás</a>
+        <a class="item">Céges tanfolyamok</a>
+        <a class="item">Magánórák</a>
+        <a class="item">Rólam</a>
+        <a class="item">Kapcsolat</a>
+    </div>
+</div>
+
+
+<!-- Page Contents -->
+<div class="pusher">
+    <div class="ui inverted vertical masthead center aligned segment" id="header-slide">
+        <div class="dark-blue" id="header-wrapper">
+            <h1>
+                Spanyol és angol nyelvórák
+            </h1>
+            <h2>Egyéni és kiscsoportos vállalati tanfolyamok,<br/> magánórák.</h2>
+            <a class="ui huge inverted neon-green button" href="#welcome-section">Részletek<i class="right arrow icon"></i></a>
+        </div>
+    </div>
+    <div class="ui vertical stripe segment" id="welcome-section">
+        <div class="ui middle aligned stackable grid container">
+            <div class="row">
+                <div class="eight wide column italic-conversational">
+                    <h3 class="ui dark-blue header">Hatékony, kiscsoportos angol és spanyol tréningek az Ön cégénél.</h3>
+                    <p><i>Üdvözlöm a honlapomon! Kedves Érdeklődő!</i></p>
+                    <p><i>
+                        Szeretné, ha munkatársai megállnák a helyüket angol nyelven történő tárgyalásokon? Fontos, hogy
+                        pontosan és gördülékenyen kommunikáljanak és prezentáljanak? Szükségük van az angolra mindennapi
+                        tevékenységük során, hiszen nyelvigényes környezetben dolgoznak? Amennyiben a válasza valamelyik
+                        kérdésre igen, kérem, olvasson tovább.
+                        <br/>Üdvözlettel,
+                        <br/>Veres András</i></p>
+                </div>
+                <div class="six wide right floated column">
+                    <img src="images/andras_veres.jpg" class="ui large bordered rounded image" alt="András Veres">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui vertical stripe inverted segment">
+        <h2 class="ui white header center aligned huge">
+            Vállalati tanfolyamok, tréningek angol és spanyol nyelven
+        </h2>
+        <h4 class="ui horizontal divider neon header">
+            <i class="student icon"></i>
+            Részletek
+        </h4>
+        <div class="ui equal width stackable internally celled grid">
+            <div class="center aligned row">
+                <div class="column">
+                    <h3 class="ui light-blue header">Kommunikációs tanfolyamok (Kiscsoportos 2-6 fő)</h3>
+                    <h3 class="ui neon-green header">Egyéni, one-on-one tanfolyamok</h3>
+                    <p><b class="light-blue">Kiknek ajánlom?</b><br/>Középfok körüli szinttől (B1+) - felsőfokig (C1)</p>
+                    <p><b class="light-blue">Milyen hosszú egy tanóra?</b><br/>Egy alkalom 90 percből áll, ami két 45 perces
+                        órának felel
+                        meg.</p>
+                    <p><b class="light-blue">Mire kerül sor a tanfolyamon?</b><br>A tananyagot minden esetben az egyéni igények
+                        figyelembe
+                        vételével állítom össze.</p>
+                </div>
+                <div class="column">
+                    <div id="chartContainer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui vertical stripe segment dark-blue">
+        <div class="ui middle aligned stackable grid container">
+            <div class=" row">
+                <div class="seven wide column">
+                    <h4 class="ui white mini-header header">Tapasztalataim szerint a következő tevékenységekre van igény a tanfolyam keretein belül</h4>
+                    <div class="ui bulleted list white">
+                        <div class="item">angolul zajló kommunikáció fejlesztésére, legyen szó üzleti vagy általános angol nyelvről.</div>
+                        <div class="item">on-the-job segítség nyújtására, amely magában foglalja tárgyalások és meetingek szimulációját, beszámolók és e-mailek megfogalmazását és prezentációk összeállítását.</div>
+                        <div class="item">nyelvtani rendszerezésre és gyakorlásra.</div>
+                        <div class="item">írott és hallott szöveg értésének fejlesztésére.</div>
+                        <div class="item">kiejtés és intonáció specifikus fejlesztésére.</div>
+                    </div>
+                </div>
+                <div class="seven wide right floated column">
+                    <h4 class="ui white mini-header header">Milyen eredményre számíthat? Nyelvtudása hatékony fejlesztésére jó hangulatú órákon</h4>
+                    <div class="ui bulleted list white">
+                        <div class="item">jelentősen nő az írott és hallott szövegek értésének képessége</div>
+                        <div class="item">javul kiejtése és intonációja; unglishHunhh d Hunglish helyett English-t beszél majd</div>
+                        <div class="item">uralja a legfontosabb nyelvtani szerkezeteket</div>
+                        <div class="item">elsajátít számos formális és informális stíluselemet</div>
+                        <div class="item">mindezek eredményeképpen magabiztosabban kommunikál szóban és írásban</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ui inverted vertical footer segment">
+        <div class="ui container">
+            <div class="ui stackable inverted divided equal height stackable grid">
+                <div class="three wide column">
+                    <h4 class="ui inverted header">About</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Sitemap</a>
+                        <a href="#" class="item">Contact Us</a>
+                        <a href="#" class="item">Religious Ceremonies</a>
+                        <a href="#" class="item">Gazebo Plans</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">Services</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Banana Pre-Order</a>
+                        <a href="#" class="item">DNA FAQ</a>
+                        <a href="#" class="item">How To Access</a>
+                        <a href="#" class="item">Favorite X-Men</a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header">Footer Header</h4>
+                    <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

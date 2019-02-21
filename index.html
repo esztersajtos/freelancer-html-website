@@ -1,0 +1,12 @@
+---
+layout: default
+heading: Semantic Jekyll Index page
+---
+{% include navigation.html %}
+<!-- Page Contents -->
+<div class="pusher">
+{% for section in site.sections %}
+	{{section}}
+{% endfor %}
+</div>
+{% include footer.html %}
