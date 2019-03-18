@@ -1,5 +1,5 @@
 .ui.inverted.masthead.segment {
-    background: url("../images/slide.jpg") no-repeat;
+    background: url("/assets/images/slide.jpg") no-repeat;
     background-position: center center;
     background-size: cover;
 }

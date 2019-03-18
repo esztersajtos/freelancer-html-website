@@ -1,3 +1,19 @@
+<?php
+/**
+ * The template for displaying all pages
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site may use a
+ * different template.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package Cegesnyelvtanfolyam
+ */
+
+get_header();
+?>
 
     <div class="ui inverted vertical masthead center aligned segment" id="header-slide">
         <div class="dark-blue" id="header-wrapper">
@@ -23,7 +39,7 @@
                         <br/>Veres András</i></p>
                 </div>
                 <div class="six wide right floated column">
-                    <img src="images/andras_veres.jpg" class="ui large bordered rounded image" alt="András Veres">
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/andras_veres.jpg" class="ui large bordered rounded image" alt="András Veres">
                 </div>
             </div>
         </div>
@@ -64,7 +80,7 @@
                     <h2>ABOUT ME</h2>
                 </div>
                 <div class="six wide right floated column">
-                    <img src="images/andras_veres.jpg" class="ui large bordered rounded image" alt="András Veres">
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/andras_veres.jpg" class="ui large bordered rounded image" alt="András Veres">
                 </div>
             </div>
         </div>
@@ -139,3 +155,6 @@
             </div>
         </div>
     </div>
+
+<?php
+get_footer();
