@@ -12,15 +12,23 @@
  * @package Cegesnyelvtanfolyam
  */
 
+// Advanced Custom Fields
+$focim = get_field('focim');
+$alcim = get_field('alcim');
+$welcome_cim = get_field('welcome_cim');
+$welcome_leiras = get_field('welcome_leiras');
+$welcome_kep = get_field('welcome_kep');
+$rolam_cim_bal = get_field('rolam_cim_bal');
+$rolam_cim_jobb = get_field('rolam_cim_jobb');
+$ajanlatkeres = get_field('ajanlatkeres_menete');
+
 get_header();
 ?>
 
     <div class="ui inverted vertical masthead center aligned segment" id="header-slide">
         <div class="dark-blue" id="header-wrapper">
-            <h1>
-                Angol és spanyol nyelvtanfolyamok
-            </h1>
-            <h2>Egyéni és kiscsoportos vállalati tanfolyamok,<br/> magánórák.</h2>
+            <h1><?php echo($focim); ?></h1>
+            <h2><?php echo($alcim); ?></h2>
             <a class="ui huge inverted neon-green button" href="#training-slides">Részletek<i class="right arrow icon"></i></a>
         </div>
     </div>
@@ -28,18 +36,13 @@ get_header();
         <div class="ui middle aligned stackable grid container">
             <div class="row">
                 <div class="eight wide column italic-conversational">
-                    <h3 class="ui dark-blue header">Hatékony, kiscsoportos angol és spanyol tanfolyamok az Ön cégénél.</h3>
-                    <p><i>Üdvözlöm a honlapomon! Kedves Érdeklődő!</i></p>
-                    <p><i>
-                        Szeretné, ha munkatársai megállnák a helyüket angol nyelven történő tárgyalásokon? Fontos, hogy
-                        pontosan és gördülékenyen kommunikáljanak és prezentáljanak? Szükségük van az angolra mindennapi
-                        tevékenységük során, hiszen nyelvigényes környezetben dolgoznak? Amennyiben a válasza valamelyik
-                        kérdésre igen, kérem, olvasson tovább.
-                        <br/>Üdvözlettel,
-                        <br/>Veres András</i></p>
+                    <h3 class="ui dark-blue header"><?php echo($welcome_cim) ?></h3>
+                    <?php echo($welcome_leiras); ?>
                 </div>
                 <div class="six wide right floated column">
-                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/andras_veres.jpg" class="ui large bordered rounded image" alt="András Veres">
+                    <?php if ($welcome_kep) {
+                        echo ('<img src="' . $welcome_kep . '" class="ui large bordered rounded image" alt="András Veres">');
+                    } ?>
                 </div>
             </div>
         </div>
@@ -77,10 +80,10 @@ get_header();
         <div class="ui middle aligned stackable grid container">
             <div class="row">
                 <div class="eight wide column italic-conversational">
-                    <h2>ABOUT ME</h2>
+                    <?php echo($rolam_cim_bal); ?>
                 </div>
                 <div class="six wide right floated column">
-                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/andras_veres.jpg" class="ui large bordered rounded image" alt="András Veres">
+                    <?php echo($rolam_cim_jobb); ?>
                 </div>
             </div>
         </div>
@@ -118,38 +121,57 @@ get_header();
             <div class=" row">
                 <div class="seven wide column">
                     <h4 class="ui white mini-header header">Az ajánlatkérés menete</h4>
-                    <p>Információ amit az ajánlatkérésről tudni kell.</p>
+                    <?php echo($ajanlatkeres); ?>
                 </div>
-                <div class="seven wide column">
-                    <form class="ui large inverted form">
+                <div class="seven wide column wpcf7" role="form" id="wpcf7-f5-o1" lang="hu-HU" dir="ltr">
+                    <div class="screen-reader-response"></div>
+                    <form action="/#wpcf7-f5-o1" method="post" class="ui large inverted form wpcf7-form" novalidate="novalidate">
+                        <div style="display: none;">
+                            <input type="hidden" name="_wpcf7" value="5" />
+                            <input type="hidden" name="_wpcf7_version" value="5.1.1" />
+                            <input type="hidden" name="_wpcf7_locale" value="hu_HU" />
+                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f5-p62-o1" />
+                            <input type="hidden" name="_wpcf7_container_post" value="62" />
+                            <input type="hidden" name="g-recaptcha-response" value="" />
+                        </div>
                       <div class="field">
                         <label>Név</label>
-                        <input type="text" name="name" placeholder="Name">
+                        <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" placeholder="Name" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"></span>
                       </div>
                       <div class="field">
                         <label>Telefonszám</label>
-                        <input type="text" name="phonenumber" placeholder="Phonenumber">
+                        <span class="wpcf7-form-control-wrap tel-300"><input type="tel" name="tel-300" placeholder="Phonenumber" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" aria-invalid="false"></span>
                       </div>
                       <div class="field">
                         <label>Email cím</label>
-                        <input type="email" name="email" placeholder="Email">
+                        <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" placeholder="Email" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false"></span>
                       </div>
                       <div class="field">
                         <label>Tanfolyam típus</label>
-                        <select class="ui search dropdown">
-                            <option value="WF">Magán óra</option>
-                            <option value="WF">Céges</option>
-                            <option value="WF">Kis tanfolyam</option>
-                            <option value="WF">Nagy tanfolyam</option>
-                        </select>
+                        <span class="wpcf7-form-control-wrap menu-179"><select name="menu-179" class="ui search dropdown wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
+                            <option value="Magán óra">Magán óra</option>
+                            <option value="Céges">Céges</option>
+                            <option value="Kis tanfolyam">Kis tanfolyam</option>
+                            <option value="Nagy tanfolyam">Nagy tanfolyam</option>
+                        </select></span>
                       </div>
                       <div class="field">
-                        <div class="ui checkbox">
-                          <input type="checkbox" tabindex="0" class="hidden">
-                          <label>I agree to the Terms and Conditions</label>
-                        </div>
+                        <label>Résztvevők száma</label>
+                        <span class="wpcf7-form-control-wrap menu-180"><select name="menu-180" class="ui search dropdown wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
+                            <option value="Egy">Egy fő</option>
+                            <option value="Kettő">Két fő</option>
+                            <option value="Három">Három fő</option>
+                            <option value="Négy">Négy fő</option>
+                            <option value="Öt">Öt fő</option>
+                            <option value="Hat">Hat fő</option>
+                        </select></span>
                       </div>
-                      <button class="ui button" type="submit">Submit</button>
+                      <div class="field">
+                        <label>Üzenet</label>
+                        <span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"></textarea></span>
+                      </div>
+                      <button class="ui button wpcf7-form-control wpcf7-submit" value="Küldés" type="submit">Küldés</button>
+                      <div class="wpcf7-response-output wpcf7-display-none"></div>
                     </form>
                 </div>
             </div>

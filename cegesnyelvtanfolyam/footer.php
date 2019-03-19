@@ -8,7 +8,7 @@
  *
  * @package Cegesnyelvtanfolyam
  */
-
+$lablec_szovege = get_field('lablec_szoveg');
 ?>
 <footer id="colophon" class="site-footer">
 <div class="ui inverted vertical footer segment" id="contact">
@@ -25,7 +25,7 @@
                 </div>
                 <div class="ten wide column">
                     <h4 class="ui inverted header">Kapcsolat</h4>
-                    <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+                    <p><?php echo($lablec_szovege); ?></p>
                 </div>
             </div>
         </div>
