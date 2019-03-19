@@ -1,103 +1,285 @@
 <?php
 /**
+ * Cegesnyelvtanfolyam functions and definitions
  *
- * @package una
- * @since una 1.0.5
- * @license GPL 2.0
- * 
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package Cegesnyelvtanfolyam
  */
 
-# ------------------------------------------------------------------------
-# Theme definitions
-# ------------------------------------------------------------------------
+if( function_exists('acf_add_local_field_group') ):
 
-define( 'una_theme_version' , '1.0.5' );  				# Theme version
-if ( ! isset( $content_width ) ) $content_width = 640;  # Content Width
+acf_add_local_field_group(array(
+	'key' => 'group_5c8a7a8dd7b17',
+	'title' => 'Főcím mezők',
+	'fields' => array(
+		array(
+			'key' => 'field_5c8a7a9b0ce3a',
+			'label' => 'Főcím',
+			'name' => 'focim',
+			'type' => 'text',
+			'instructions' => 'Slideshow alatti cím',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 'Angol és spanyol nyelvtanfolyamok',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+		array(
+			'key' => 'field_5c8a7ab50ce3b',
+			'label' => 'Alcím',
+			'name' => 'alcim',
+			'type' => 'text',
+			'instructions' => 'Slideshow alatti kisbetűs szöveg',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 'Egyéni és kiscsoportos vállalati tanfolyamok, magánórák',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'page',
+				'operator' => '==',
+				'value' => '33',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'acf_after_title',
+	'style' => 'default',
+	'label_placement' => 'left',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
 
-#-------------------------------------------------------------
-# WordPress Head Clean-up
-#-------------------------------------------------------------
+acf_add_local_field_group(array(
+	'key' => 'group_5c90c48613b2f',
+	'title' => 'Kapcsolat',
+	'fields' => array(
+		array(
+			'key' => 'field_5c90c48becd6a',
+			'label' => 'Ajánlatkérés menete',
+			'name' => 'ajanlatkeres_menete',
+			'type' => 'wysiwyg',
+			'instructions' => 'Ajánlatkérés magyarázata',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 'Ajánlatkérés menete',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
+		array(
+			'key' => 'field_5c90c50291ca8',
+			'label' => 'Lábléc szöveg',
+			'name' => 'lablec_szoveg',
+			'type' => 'textarea',
+			'instructions' => 'Lábléc szövege',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 'Lábléc szövege',
+			'placeholder' => '',
+			'maxlength' => '',
+			'rows' => '',
+			'new_lines' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'post',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
 
-function una_head_cleanup(){
+acf_add_local_field_group(array(
+	'key' => 'group_5c8a7b5f5b31e',
+	'title' => 'Welcome mezők',
+	'fields' => array(
+		array(
+			'key' => 'field_5c8a7ba9a45b1',
+			'label' => 'Welcome cím',
+			'name' => 'welcome_cim',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 'Hatékony, kiscsoportos angol és spanyol tanfolyamok az Ön cégénél.',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+		array(
+			'key' => 'field_5c8a7bc3a45b2',
+			'label' => 'Welcome leírás',
+			'name' => 'welcome_leiras',
+			'type' => 'wysiwyg',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
+		array(
+			'key' => 'field_5c8a7bf362bac',
+			'label' => 'Welcome kép',
+			'name' => 'welcome_kep',
+			'type' => 'image',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'url',
+			'preview_size' => 'full',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'page',
+				'operator' => '==',
+				'value' => '33',
+			),
+		),
+	),
+	'menu_order' => 1,
+	'position' => 'acf_after_title',
+	'style' => 'default',
+	'label_placement' => 'left',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
 
-    // Add default posts and comments RSS feed links to head.
-    add_theme_support( 'automatic-feed-links' );
+acf_add_local_field_group(array(
+	'key' => 'group_5c8a7ce87b3d7',
+	'title' => 'Rólam',
+	'fields' => array(
+		array(
+			'key' => 'field_5c8a7cee793ef',
+			'label' => 'Rólam cím bal',
+			'name' => 'rolam_cim_bal',
+			'type' => 'wysiwyg',
+			'instructions' => 'Bal oldali szövegterület',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
+		array(
+			'key' => 'field_5c8a7d40793f0',
+			'label' => 'Rólam cím jobb oldal',
+			'name' => 'rolam_cim_jobb',
+			'type' => 'wysiwyg',
+			'instructions' => 'Rólam szekció jobb oldali szöveg',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'page',
+				'operator' => '==',
+				'value' => '33',
+			),
+		),
+	),
+	'menu_order' => 3,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
 
-    // New Title support since WP 4.1
-    add_theme_support( 'title-tag' );
+endif;
 
-    // Disable comments feed
-    add_filter( 'feed_links_show_comments_feed', '__return_false' ); 
-
-    // Remove Smileys embedded in head
-    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-
-    // Remove Smileys embedded in head
-    remove_action( 'wp_print_styles', 'print_emoji_styles' );   
-
-    // Remove RSS Feed in header
-    remove_action('wp_head', 'feed_links', 2 );
-
-    // Remove REST API
-    remove_action( 'wp_head', 'rest_output_link_wp_head' );
-
-    // Remove Windows Live Writer Manifest Link
-    remove_action( 'wp_head', 'wlwmanifest_link');
-
-    // Remove Weblog Client Link
-    remove_action ('wp_head', 'rsd_link');
-
-    // Remove WordPress Page/Post Shortlinks 
-    remove_action( 'wp_head', 'wp_shortlink_wp_head');
-
-    // Remove DNS Pre-fetch  (uncomment below to remove)
-    // remove_action( 'wp_head', 'wp_resource_hints', 2 );
-
-
-}
-
-add_action( 'after_setup_theme', 'una_head_cleanup' );
-
-#-------------------------------------------------------------
-# Ultra geeky wp_head indentation
-#-------------------------------------------------------------
-
-function indented_wp_head(){
-    ob_start();
-    wp_head();
-    $header = ob_get_contents();
-    ob_end_clean();
-    echo preg_replace("/\n/", "\n\t", substr($header, 0, -1));
-    echo "\n";
-}
-
-#-------------------------------------------------------------
-# Enqueue Styles
-#-------------------------------------------------------------
-
-function una_enqueue_styles() {             
-
-	# Main stylesheet
-  	wp_register_style( 'una-main-styles' , get_template_directory_uri(). "/style.css" , array(), una_theme_version, 'screen' );  	
-  	wp_enqueue_style( 'una-main-styles' );           
-
-}
-
-add_action( 'wp_enqueue_scripts' , 'una_enqueue_styles' );
-
-#-------------------------------------------------------------
-# Enqueue Scripts 
-#-------------------------------------------------------------
-
-# False = Header
-# True = Footer
-
-function una_enqueue_scripts() {
-
-	# Custom Scripts 
-	wp_register_script  ( 'una-custom-code' , get_template_directory_uri().'/frontend/js/custom-code.js' , array(), una_theme_version, true );
-	wp_enqueue_script ( 'una-custom-code' );  
-
-}
-
-add_action( 'wp_enqueue_scripts' , 'una_enqueue_scripts'   );

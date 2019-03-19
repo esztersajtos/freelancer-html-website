@@ -1,51 +1,50 @@
 <?php
 /**
- * Default theme header
+ * The header for our theme
  *
- * Displays the <head> section as well as the opening tag for the body
- * 
- * @package una
- * @since una 1.0.0
- * @license GPL 2.0
- * 
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Cegesnyelvtanfolyam
  */
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <!-- Standard Meta -->
-    <meta charset="<?php bloginfo('charset'); ?>" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	
-	<!-- Responsive stylesheet -->
-	<meta name="viewport" content="width=device-width,initial-scale=1 maximum-scale=1.0" />
-
-    <!-- Site Properties -->
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+<!-- Site Properties -->
     <title>Homepage - Semantic</title>
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/reset.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/site.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/reset.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/site.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/form.css">
 
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/container.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/grid.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/header.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/image.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/menu.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/container.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/grid.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/header.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/image.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/menu.css">
 
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/divider.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/dropdown.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/segment.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/button.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/list.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/icon.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/sidebar.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/transition.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/divider.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/segment.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/button.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/list.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/icon.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/transition.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css">
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="semantic/dist/components/visibility.js"></script>
-    <script src="semantic/dist/components/sidebar.js"></script>
-    <script src="semantic/dist/components/transition.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/visibility.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/sidebar.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/transition.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/assets/semantic/dist/components/form.js"></script>
     <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -103,7 +102,19 @@
             $("#chartContainer").CanvasJSChart(options);
         });
     </script>
-    <?php indented_wp_head(); ?>
+	<?php wp_head(); ?>
 </head>
+<body <?php body_class(); ?>>
 
-<body <?php body_class(); ?> >
+<!-- Following Menu -->
+<div class="ui large top inverted menu dark-blue">
+    <div class="ui container">
+        <a class="item" href="#training-slides">Céges tanfolyamok</a>
+        <a class="item" href="#private-classes">Magánórák</a>
+        <a class="item" href="#about-me">Rólam</a>
+        <a class="item" href="#proposal">Ajánlatkérő</a>
+        <a class="item" href="#contact">Kapcsolat</a>
+    </div>
+</div>
+<!-- Page Contents -->
+<div class="pusher">
