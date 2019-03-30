@@ -26,6 +26,7 @@ get_header();
 ?>
 
     <div class="ui inverted vertical masthead center aligned segment" id="header-slide">
+        <?php echo do_shortcode('[metaslider id="83"]'); ?>
         <div class="dark-blue" id="header-wrapper">
             <h1><?php echo($focim); ?></h1>
             <h2><?php echo($alcim); ?></h2>
@@ -71,19 +72,6 @@ get_header();
                 </div>
                 <div class="column">
                     <div id="chartContainer"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="ui vertical stripe segment dark-blue" id="about-me">
-        <div class="ui middle aligned stackable grid container">
-            <div class="row">
-                <div class="eight wide column italic-conversational">
-                    <?php echo($rolam_cim_bal); ?>
-                </div>
-                <div class="six wide right floated column">
-                    <?php echo($rolam_cim_jobb); ?>
                 </div>
             </div>
         </div>
@@ -147,12 +135,17 @@ get_header();
                         <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" placeholder="Email" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false"></span>
                       </div>
                       <div class="field">
+                        <label>Nyelv</label>
+                        <span class="wpcf7-form-control-wrap menu-179"><select name="menu-178" class="ui search dropdown wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
+                            <option value="Angol">Angol</option>
+                            <option value="Spanyol">Spanyol</option>
+                        </select></span>
+                      </div>
+                      <div class="field">
                         <label>Tanfolyam típus</label>
                         <span class="wpcf7-form-control-wrap menu-179"><select name="menu-179" class="ui search dropdown wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
-                            <option value="Magán óra">Magán óra</option>
-                            <option value="Céges">Céges</option>
-                            <option value="Kis tanfolyam">Kis tanfolyam</option>
-                            <option value="Nagy tanfolyam">Nagy tanfolyam</option>
+                            <option value="Kis tanfolyam">Kiscsoportos</option>
+                            <option value="Egyéni">Egyéni</option>
                         </select></span>
                       </div>
                       <div class="field">
@@ -173,6 +166,19 @@ get_header();
                       <button class="ui button wpcf7-form-control wpcf7-submit" value="Küldés" type="submit">Küldés</button>
                       <div class="wpcf7-response-output wpcf7-display-none"></div>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui vertical stripe segment dark-blue" id="about-me">
+        <div class="ui middle aligned stackable grid container">
+            <div class="row">
+                <div class="eight wide column italic-conversational">
+                    <?php echo($rolam_cim_bal); ?>
+                </div>
+                <div class="six wide right floated column">
+                    <?php echo($rolam_cim_jobb); ?>
                 </div>
             </div>
         </div>

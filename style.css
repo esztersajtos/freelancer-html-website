@@ -19,11 +19,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-.ui.inverted.masthead.segment {
-    background: url("assets/images/slide.jpg") no-repeat;
-    background-position: center center;
-    background-size: cover;
-}
 .ui.secondary.inverted.pointing.menu {
     background-color: #223142;;
     border: none;
